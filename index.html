@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/css/main.css">
+    
+    <!-- Lien vers le fichier manifest qui contient l'aspect général de l'app (couleur primaire, icon, ...-->
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Ajout des supports pour faire fonctionner sur le home IOS/Safari -->
+		<meta name='apple-mobile-web-app-capable' content='yes'>
+		<meta name='apple-mobile-web-app-status-bar-style' content='black'>
+		<meta name='apple-mobile-web-app-title' content='PWA Template'>
+		<link rel='apple-touch-icon' href='/assets/images/launcher-icon-3x.png'>
+		<meta name='msapplication-TileImage' content='/assets/images/launcher-icon-3x.png'>
+		<meta name='msapplication-TileColor' content='#2e3135'>
+        <meta name="apple-mobile-web-app-status-bar" content="#db4938" />
+
+
+    
+    <title>Bienvenue dans La demo PWA</title>
+</head>
+<body >
+    <header>
+        <nav>
+        <h1>Amaris Consulting CI</h1>
+        <ul>
+          <li>Accueil</li>
+          <li>Apropos</li>
+          <li>Contacts</li>
+        </ul>
+      </nav>
+      <div class="container"></div>
+    </header>
+
+    <main>
+     <!-- HOME -->
+    <section>
+<p>
+      Cliquez pour installer l'application !
+    </p>
+
+    <pwa-install>Installer</pwa-install>
+            </section>
+
+    
+    </main>
+   
+    <!-- SEARCH -->
+    <section data-ui-include="pages/search"></section>
+
+    <!-- NOTIFICATIONS -->
+    <section data-ui-include="pages/notifications"></section>
+
+    <!-- ABOUT -->
+    <section data-ui-include="pages/about" layout="column top-center"></section>
+
+    </main>
+
+    <!-- The footer with toolbar buttons -->
+    <footer data-ui-include="layout/footer"
+            data-ui-options="options.footerBar"></footer>
+
+    <!-- Intégration du service workers -->
+    <script>
+    // Pour intégrer le service worker on fait un test pour pouvoir l'enregister
+        if ("serviceWorker" in navigator) {
+        window.addEventListener("load", function(reg) {
+            navigator.serviceWorker
+            .register("./js/service-worker.js")
+            .then(res => console.log("Le service worker est dans le registre ◕‿◕", reg, res))
+            .catch(err => console.log("Le service worker n'est pas dans le registre", err))
+        })
+        }
+    </script>
+
+    <!-- Intégration du javascript pour la page -->
+    <script src='./js/main.js'>
+    
+    </script>
+
+
+</body>
