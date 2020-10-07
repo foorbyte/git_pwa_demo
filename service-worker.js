@@ -1,4 +1,6 @@
 //Le nm du cache actuel
+console.log("Le service Worker est en cours d'installation.")
+
 const staticAmarisSite = "amaris-site-v1"
 // Ajout des dossiers et fichiers dans le cache du naigateur pour la prise en compte de l'app en offline par exemple
 
@@ -17,6 +19,7 @@ const assets = [
   "/images/coffee8.jpg",
   "/images/coffee9.jpg",
 ]
+
 
 //L'installation de l'application via le cache du navigateur
 self.addEventListener("install", installEvent => {

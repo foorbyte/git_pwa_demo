@@ -28,7 +28,7 @@
         <h1>Amaris Consulting CI</h1>
         <ul>
           <li>Accueil</li>
-          <li>Apropos</li>
+          <li>A propos</li>
           <li>Contacts</li>
         </ul>
       </nav>
@@ -42,7 +42,7 @@
       Cliquez pour installer l'application !
     </p>
 
-    <pwa-install>Installer</pwa-install>
+    <buttons>Installer</buttons>
             </section>
 
     
@@ -65,15 +65,7 @@
 
     <!-- Intégration du service workers -->
     <script>
-    // Pour intégrer le service worker on fait un test pour pouvoir l'enregister
-        if ("serviceWorker" in navigator) {
-        window.addEventListener("load", function(reg) {
-            navigator.serviceWorker
-            .register("./js/service-worker.js")
-            .then(res => console.log("Le service worker est dans le registre ◕‿◕", reg, res))
-            .catch(err => console.log("Le service worker n'est pas dans le registre", err))
-        })
-        }
+  
     </script>
 
     <!-- Intégration du javascript pour la page -->
